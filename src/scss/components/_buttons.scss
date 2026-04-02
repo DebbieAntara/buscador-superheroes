@@ -1,0 +1,30 @@
+@use "../base/variables" as *;
+
+.button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &--secondary {
+    background-color: #e0e7ff;
+    color: #1e1b4b;
+    width: 100%;
+  }
+
+  &--pagination {
+    background-color: #eef2ff;
+    color: #312e81;
+  }
+}

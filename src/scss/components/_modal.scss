@@ -1,0 +1,58 @@
+@use "../base/variables" as *;
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  &__content {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: min(900px, 92%);
+    max-height: 85vh;
+    overflow-y: auto;
+    background-color: $color-white;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    padding: 1.5rem;
+    z-index: 10;
+  }
+
+  &__close {
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 1rem;
+  }
+
+  &__body {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal__body {
+    grid-template-columns: 320px 1fr;
+    align-items: start;
+  }
+}
