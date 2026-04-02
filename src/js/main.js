@@ -1,0 +1,1 @@
+console.log("Buscador de Superhéroes iniciado");

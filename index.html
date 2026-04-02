@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscador de Superhéroes</title>
+  <link rel="stylesheet" href="./src/scss/main.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">Buscador de Superhéroes</h1>
+    <p class="header__subtitle">Encuentra información de tus héroes favoritos</p>
+  </header>
+
+  <main class="main">
+    <section class="search-section">
+      <form class="search-form" id="searchForm">
+        <label for="heroInput">Buscar superhéroe</label>
+        <input type="text" id="heroInput" placeholder="Ejemplo: Batman" />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div class="search-controls">
+        <label for="sortSelect">Ordenar</label>
+        <select id="sortSelect">
+          <option value="asc">A-Z</option>
+          <option value="desc">Z-A</option>
+        </select>
+      </div>
+
+      <p id="resultsCount">Resultados: 0</p>
+    </section>
+
+    <section id="messageContainer"></section>
+    <section id="heroesContainer" class="heroes-grid"></section>
+    <section id="paginationContainer" class="pagination"></section>
+  </main>
+
+  <div id="heroModal" class="modal hidden">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button id="closeModal" class="modal__close">X</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

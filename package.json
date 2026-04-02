@@ -1,0 +1,25 @@
+{
+  "name": "buscador-superheroes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src/scss/main.scss:src/scss/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DebbieAntara/buscador-superheroes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DebbieAntara/buscador-superheroes/issues"
+  },
+  "homepage": "https://github.com/DebbieAntara/buscador-superheroes#readme",
+  "devDependencies": {
+    "sass": "^1.98.0"
+  }
+}
