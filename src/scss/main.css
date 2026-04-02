@@ -8,6 +8,247 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f5f7fb;
   color: #222;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.header {
+  background: linear-gradient(135deg, #312e81, #4f46e5);
+  color: #ffffff;
+  padding: 2.5rem 0;
+  margin-bottom: 2rem;
+}
+.header__title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.header__subtitle {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.search-section {
+  background-color: #ffffff;
+  border: 1px solid #dcdfe6;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.search-form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.search-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.search-form__label {
+  font-weight: bold;
+}
+.search-form__input {
+  padding: 0.85rem 1rem;
+  border: 1px solid #dcdfe6;
+  border-radius: 10px;
+  outline: none;
+}
+.search-form__input:focus {
+  border-color: #4f46e5;
+}
+
+.search-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.search-controls__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.search-controls__label {
+  font-weight: bold;
+}
+.search-controls__select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #dcdfe6;
+  border-radius: 10px;
+}
+.search-controls__count {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .search-controls {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  }
+}
+.main {
+  padding-bottom: 3rem;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.message-container {
+  margin-bottom: 1.5rem;
+}
+.message-container__text {
+  color: #555;
+}
+
+.heroes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .heroes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .heroes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.hero-card {
+  background-color: #ffffff;
+  border: 1px solid #dcdfe6;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.hero-card__image-wrapper {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+.hero-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-card__body {
+  padding: 1rem;
+}
+.hero-card__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+.hero-card__meta {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+.modal__content {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 92%);
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  z-index: 10;
+}
+.modal__close {
+  border: none;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-bottom: 1rem;
+}
+.modal__body {
+  display: grid;
+  gap: 1.5rem;
+}
+.modal__image-wrapper {
+  width: 100%;
+  max-width: 320px;
+}
+.modal__title {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .modal__body {
+    grid-template-columns: 320px 1fr;
+    align-items: start;
+  }
+}
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.pagination__info {
+  font-weight: bold;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.button--primary {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+.button--secondary {
+  background-color: #e0e7ff;
+  color: #1e1b4b;
+  width: 100%;
+}
+.button--pagination {
+  background-color: #eef2ff;
+  color: #312e81;
+}
+
+body {
+  min-height: 100vh;
 }
 
 /*# sourceMappingURL=main.css.map */
