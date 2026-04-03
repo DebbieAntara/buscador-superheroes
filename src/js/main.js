@@ -1,8 +1,22 @@
-const modal = document.getElementById("heroModal");
-const closeModalButton = document.getElementById("closeModal");
+import { searchHeroesByName } from "./api/superheroApi.js";
 
-if (closeModalButton) {
-  closeModalButton.addEventListener("click", () => {
-    modal.classList.add("hidden");
-  });
-}
+const searchForm = document.getElementById("searchForm");
+const heroInput = document.getElementById("heroInput");
+
+searchForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const heroName = heroInput.value.trim();
+
+  if (!heroName) {
+    console.log("Ingresa un nombre de superhéroe.");
+    return;
+  }
+
+  try {
+    const heroes = await searchHeroesByName(heroName);
+    console.log("Resultados encontrados:", heroes);
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+});
