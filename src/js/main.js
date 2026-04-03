@@ -1,4 +1,7 @@
 import { searchHeroesByName } from "./api/superheroApi.js";
+import { appState } from "./state/appState.js";
+import { renderHeroes, clearHeroes, updateResultsCount } from "./ui/renderHeroes.js";
+import { renderMessage, clearMessage } from "./ui/renderMessages.js";
 
 const searchForm = document.getElementById("searchForm");
 const heroInput = document.getElementById("heroInput");
@@ -8,15 +11,36 @@ searchForm.addEventListener("submit", async (event) => {
 
   const heroName = heroInput.value.trim();
 
+  clearHeroes();
+  updateResultsCount(0);
+
   if (!heroName) {
-    console.log("Ingresa un nombre de superhéroe.");
+    renderMessage("Escribe un nombre de superhéroe antes de buscar.");
     return;
   }
 
+  renderMessage("Buscando superhéroes...");
+
   try {
     const heroes = await searchHeroesByName(heroName);
-    console.log("Resultados encontrados:", heroes);
+
+    appState.currentHeroes = heroes;
+    appState.currentQuery = heroName;
+
+    if (!heroes.length) {
+      renderMessage("No se encontraron resultados para esa búsqueda.");
+      return;
+    }
+
+    clearMessage();
+    renderHeroes(heroes);
   } catch (error) {
+    appState.currentHeroes = [];
+    appState.currentQuery = "";
+
+    clearHeroes();
+    updateResultsCount(0);
+    renderMessage(error.message || "Ocurrió un error al buscar héroes.");
     console.error("Error:", error.message);
   }
 });
