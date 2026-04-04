@@ -1,37 +1,20 @@
-@use "../base/variables" as *;
-
-.main {
-  padding-bottom: 3rem;
-}
-
-.container {
-  width: min(1100px, 92%);
-  margin: 0 auto;
-}
-
-.message-container {
-  margin-bottom: 1.5rem;
-
-  &__text {
-    color: #555;
-  }
-}
-
 .heroes-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 1.25rem;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
   .heroes-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .heroes-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
   }
 }
