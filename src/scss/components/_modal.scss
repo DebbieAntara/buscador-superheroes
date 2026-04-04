@@ -1,58 +1,115 @@
-@use "../base/variables" as *;
-
-.hidden {
-  display: none;
-}
-
 .modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
   &__overlay {
-    position: fixed;
+    position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background-color: rgba(15, 23, 42, 0.65);
   }
 
   &__content {
-    position: fixed;
-    inset: 50% auto auto 50%;
-    transform: translate(-50%, -50%);
-    width: min(900px, 92%);
-    max-height: 85vh;
+    position: relative;
+    z-index: 1;
+    width: min(92vw, 950px);
+    max-height: 90vh;
     overflow-y: auto;
-    background-color: $color-white;
-    border-radius: $radius;
-    box-shadow: $shadow;
-    padding: 1.5rem;
-    z-index: 10;
+    margin: 5vh auto 0;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
   }
 
   &__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
     border: none;
     background: transparent;
     font-size: 2rem;
+    line-height: 1;
     cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-bottom: 1rem;
+    color: #111827;
   }
 
   &__body {
-    display: grid;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
   &__image-wrapper {
     width: 100%;
-    max-width: 320px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #e5e7eb;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
   }
 
   &__title {
-    margin-bottom: 1rem;
+    margin: 0;
+    font-size: 1.75rem;
+  }
+
+  &__info p {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  &__stats-wrapper {
+    margin-top: 0.5rem;
+  }
+
+  &__stats {
+    margin: 0.5rem 0 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.35rem;
   }
 }
 
 @media (min-width: 768px) {
-  .modal__body {
-    grid-template-columns: 320px 1fr;
-    align-items: start;
+  .modal {
+    &__content {
+      padding: 1.5rem;
+    }
+
+    &__body {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal {
+    &__content {
+      width: min(88vw, 1000px);
+      padding: 1.75rem;
+    }
+
+    &__body {
+      grid-template-columns: 320px 1fr;
+      gap: 2rem;
+    }
   }
 }
