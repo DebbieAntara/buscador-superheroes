@@ -4,7 +4,7 @@ body {
 }
 
 .main {
-  padding: 1.5rem 0 3rem;
+  padding: 0 0 3rem;
 }
 
 .container {
@@ -16,9 +16,13 @@ body {
   display: none !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @media (min-width: 768px) {
   .main {
-    padding: 2rem 0 4rem;
+    padding: 0 0 4rem;
   }
 
   .container {
@@ -28,7 +32,7 @@ body {
 
 @media (min-width: 1024px) {
   .main {
-    padding: 2.5rem 0 4.5rem;
+    padding: 0 0 4.5rem;
   }
 
   .container {

@@ -1,48 +1,104 @@
-.header {
-  background: linear-gradient(135deg, #4338ca, #4f46e5);
+.hero {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
   color: #ffffff;
-  padding: 2rem 0;
-  margin-bottom: 1.5rem;
+  display: grid;
+  align-items: center;
+  margin-bottom: 0;
+}
 
-  &__title {
-    margin: 0;
-    font-size: 2rem;
-    line-height: 1.1;
-    text-align: center;
-  }
+.hero__media {
+  position: absolute;
+  inset: 0;
+}
 
-  &__subtitle {
-    margin: 0.75rem 0 0;
-    font-size: 1rem;
-    text-align: center;
-    opacity: 0.95;
-  }
+.hero__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 18, 40, 0.35) 0%,
+    rgba(10, 18, 40, 0.55) 45%,
+    rgba(10, 18, 40, 0.75) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-block: 3rem 5rem;
+}
+
+.hero__badge {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(4px);
+}
+
+.hero__title {
+  margin: 0;
+  font-size: 3.6rem;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.hero__subtitle {
+  margin: 0.9rem auto 1.4rem;
+  max-width: 680px;
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.96;
 }
 
 @media (min-width: 768px) {
-  .header {
-    padding: 2.5rem 0;
+  .hero {
+    min-height: 380px;
+  }
 
-    &__title {
-      font-size: 2.5rem;
-    }
+  .hero__content {
+    padding-block: 3.75rem 6rem;
+  }
 
-    &__subtitle {
-      font-size: 1.1rem;
-    }
+  .hero__title {
+    font-size: 3.2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .header {
-    padding: 3rem 0;
+  .hero {
+    min-height: 420px;
+  }
 
-    &__title {
-      font-size: 3rem;
-    }
+  .hero__content {
+    padding-block: 4.25rem 6.5rem;
+  }
 
-    &__subtitle {
-      font-size: 1.15rem;
-    }
+  .hero__title {
+    font-size: 4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.15rem;
   }
 }
