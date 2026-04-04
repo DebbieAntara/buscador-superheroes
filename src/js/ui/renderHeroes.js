@@ -45,7 +45,6 @@ export function renderHeroes(heroes) {
   if (!heroesContainer) return;
 
   clearHeroes();
-  updateResultsCount(heroes.length);
 
   if (!heroes.length) return;
 
