@@ -8,8 +8,8 @@ El proyecto consume datos reales a través de una API REST y utiliza un proxy PH
 
 ## Demo
 
-Sitio desplegado:
-**https://superheroes.ltconsulting-group.com/**
+Sitio desplegado:  
+**<https://superheroes.ltconsulting-group.com/>**
 
 ---
 
@@ -43,20 +43,108 @@ buscador-superheroes/
 ├── api/
 │   ├── config.example.php
 │   ├── searchHero.php
-│   └── config.php
+│   └── config.php   (local / hosting, no se sube a GitHub)
 ├── assets/
 │   └── img/
-├── evidencias
+│       └── hero-banner.webp
+├── evidencias/
 ├── src/
 │   ├── js/
 │   │   ├── api/
+│   │   │   └── superheroApi.js
 │   │   ├── state/
+│   │   │   └── appState.js
 │   │   ├── ui/
+│   │   │   ├── renderHeroes.js
+│   │   │   ├── renderMessages.js
+│   │   │   ├── renderModal.js
+│   │   │   └── renderPagination.js
 │   │   ├── utils/
+│   │   │   ├── paginateHeroes.js
+│   │   │   └── sortHeroes.js
 │   │   └── main.js
 │   └── scss/
+│       ├── base/
+│       ├── components/
+│       ├── layout/
+│       ├── pages/
+│       ├── main.scss
+│       └── main.css
 ├── .gitignore
 ├── index.html
 ├── package.json
 ├── package-lock.json
-└── README.md 
+└── README.md
+```
+
+---
+
+## Cómo ejecutar el proyecto en local
+
+1. Clonar el repositorio
+2. Abrir la carpeta en Visual Studio Code
+3. Instalar dependencias:
+
+```bash
+npm install
+```
+
+4; Compilar SCSS:
+
+```bash
+npx sass --watch src/scss/main.scss src/scss/main.css
+```
+
+5; Ejecutar el proyecto con Live Server
+
+---
+
+## Proxy PHP
+
+El proyecto no consume directamente el token de la API desde el frontend.
+
+Para ello se utiliza un proxy PHP ubicado en:
+
+- `api/searchHero.php`
+- `api/config.php`
+
+El archivo `config.php` contiene el token real y **no se sube a GitHub**.
+
+En su lugar se incluye:
+
+- `api/config.example.php`
+
+---
+
+## Archivo sensible ignorado
+
+En `.gitignore` se excluye:
+
+```gitignore
+api/config.php
+```
+
+---
+
+## Flujo de trabajo con Git
+
+Cada funcionalidad fue desarrollada en una rama independiente y luego integrada mediante Pull Request hacia `develop`.
+
+Ramas principales trabajadas:
+
+- `feature/estructura-base`
+- `feature/layout-base`
+- `feature/api-proxy`
+- `feature/render-resultados`
+- `feature/ordenamiento-alfabetico`
+- `feature/modal-detalle-heroe`
+- `feature/paginacion`
+- `feature/scss-responsive`
+- `feature/hero-banner`
+- `feature/deploy-mochahost`
+
+---
+
+## Estado del proyecto
+
+Versión final preparada para despliegue y entrega académica.
