@@ -1,2 +1,0 @@
-<?php
-define('SUPERHERO_TOKEN', '3e682ab56003d426ea41e76d222c759d');
