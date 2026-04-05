@@ -1,0 +1,4 @@
+node_modules/
+src/scss/main.css.map
+.DS_Store
+api/config.php

@@ -1,0 +1,2 @@
+<?php
+define('SUPERHERO_TOKEN', 'AQUI_VA_TU_TOKEN');

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscador de Superhéroes</title>
+  <link rel="stylesheet" href="./src/scss/main.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__media">
+      <img
+        src="./assets/img/hero-banner.webp"
+        alt="Banner ilustrado de superhéroes estilo cómic"
+        class="hero__image"
+      />
+      <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__content container">
+    <p class="hero__badge">Proyecto académico</p>
+    <h1 class="hero__title">Buscador de Superhéroes</h1>
+    <p class="hero__subtitle">
+      Encuentra información, poderes y biografías de tus héroes favoritos
+    </p>
+    <a href="#searchSection" class="button button--hero">Buscar ahora</a>
+  </div>
+
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="search-section search-section--floating" id="searchSection">
+        <form class="search-form" id="searchForm">
+          <div class="search-form__group">
+            <label for="heroInput" class="search-form__label">Buscar superhéroe</label>
+            <input
+              type="text"
+              id="heroInput"
+              class="search-form__input"
+              placeholder="Ejemplo: Batman"
+            />
+          </div>
+
+          <div class="search-form__actions">
+            <button type="submit" class="button button--primary">Buscar</button>
+          </div>
+        </form>
+
+        <div class="search-controls">
+          <div class="search-controls__group">
+            <label for="sortSelect" class="search-controls__label">Ordenar</label>
+            <select id="sortSelect" class="search-controls__select">
+              <option value="asc">A-Z</option>
+              <option value="desc">Z-A</option>
+            </select>
+          </div>
+
+          <p id="resultsCount" class="search-controls__count">Resultados: 0</p>
+        </div>
+      </section>
+
+      <section id="messageContainer" class="message-container">
+      <p class="message-container__text">Busca un superhéroe para ver resultados.</p>
+      </section>
+
+      <section id="heroesContainer" class="heroes-grid"></section>
+
+      <section id="paginationContainer" class="pagination hidden"></section>
+    </div>
+  </main>
+
+  <div id="heroModal" class="modal hidden">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button id="closeModal" class="modal__close" type="button">×</button>
+      <div id="modalBody" class="modal__body"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

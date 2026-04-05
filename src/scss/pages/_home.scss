@@ -1,0 +1,41 @@
+body {
+  background-color: #eef1f5;
+  color: #1f2937;
+}
+
+.main {
+  padding: 0 0 3rem;
+}
+
+.container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: 0 0 4rem;
+  }
+
+  .container {
+    width: min(100% - 3rem, 1200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    padding: 0 0 4.5rem;
+  }
+
+  .container {
+    width: min(100% - 4rem, 1200px);
+  }
+}
